@@ -16,12 +16,12 @@ export default function NavbarLinksDesktop({ categories }) {
         <div className="flex w-9/12 justify-center capitalize tracking-wide text-lg font-[400]		 ">
             {!searchBarIsOpen &&
                 <div className=" self-center">
-                    <div className="dropdown bg-primary rounded-full hover:bg-secondary text-white cursor-pointer">
+                    <div className="dropdown  hover:text-primary">
                         <Link
                             href="/products/novelties"      
                             id="novelties"
                             /* onClick={(e) => CategoriesHandleClick(e.target.id)} */
-                            className=" mx-6   cursor-pointer navLink hover:text-white  "
+                            className=" mx-6   cursor-pointer navLink   "
                         >
                             Novedades
                         </Link>

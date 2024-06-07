@@ -6,7 +6,7 @@ export default function CarouselWrapper({ product }) {
 
 
   return (
-    <div className="w-[373px] h-[560] lg:w-[450px] lg:h-[680px]">
+    <div className=" lg:w-[450px] lg:h-[680px]">
       <Carousel product={product} />
     </div>
   );

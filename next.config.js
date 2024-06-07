@@ -1,26 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-    images: {
-        domains: ['res.cloudinary.com'],
-      },
-      async headers() {
-        return [
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*', // Aplicar a todas las rutas
+        headers: [
           {
-            source: '/',
-            headers: [
-              {
-                key: 'Access-Control-Allow-Origin',
-                value: 'http://localhost:3000', // Permitir solicitudes desde el origen del frontend
-              },
-            ],
+            key: 'Cache-Control',
+            value: 'no-store, max-age=0', // Deshabilitar caché
           },
-        ];
+        ],
       },
-}
+    ];
+  },
+};
 
-module.exports = nextConfig
-
-
-
-
+module.exports = nextConfig;

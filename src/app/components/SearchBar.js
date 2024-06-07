@@ -7,12 +7,17 @@ import { FiSearch } from "react-icons/fi";
 
 
 import styles from "../lib/styles.module.css"
+import { useRouter } from "next/navigation";
 
 export default function SearchBar() {
 
+    const router = useRouter()
     const { searchBarIsOpen, setSearchBarIsOpen, searchTerm, setSearchTerm } = useContext(AppContext)
 
     const handleClickCloseButton = () => {
+        if (searchBarIsOpen) {
+            router.back()
+        }
         setSearchBarIsOpen(!searchBarIsOpen)
     }
 

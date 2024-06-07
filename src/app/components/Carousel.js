@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Swipe from "react-easy-swipe";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import ClientImage from "./ClientImage";
 
 /**
  * Carousel component for nextJS and Tailwind.
@@ -39,7 +40,7 @@ export default function Carousel({ product }) {
           {product?.images?.map((image, index) => {
             if (index === currentSlide) {
               return (
-                <Image
+                <ClientImage
                 alt="Imagen"
                   key={image.id}
                   src={image.url}

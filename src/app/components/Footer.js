@@ -13,25 +13,28 @@ export default function Footer() {
     <div className="flex flex-col w-full bg-primary text-white mt-10  text-sm">
 
       <div className="flex  w-full borde border-white mt-5 py-8">
-        <div className="flex flex-col lg:flex-row container mx-auto  justify-around">
-          <div className="flex flex-col w-4/12  text-2xl  ">
+        <div className="flex flex-col md:flex-row md:container mx-auto   md:justify-around">
+          <div className="flex flex-col container  p-2  md:p-0 md:w-4/12  text-2xl  ">
             <SubscriptionForm />
           </div>
-          <div className="flex flex-col w-4/12  px-10">
-            <h3 className="text-xl font-medium mx-auto">Información legal</h3>
+          <div className="flex flex-col container md:p-0 md:w-4/12 mt-8 md:mt-0  px-10">
+            <h3 className="text-2xl font-medium mx-auto">Información legal</h3>
             <div className="flex flex-col mx-auto text-md">
             <Link className="mx-auto mt-3" href="/terms">
-              - Términos y condiciones
+              Términos y Condiciones
             </Link>
             <Link className="mx-auto mt-2" href="/legals">
-              - Aviso Legal y Privacidad
+              Aviso Legal y Privacidad
+            </Link>
+            <Link className="mx-auto mt-2" href="/changes">
+              Envíos, Cambios y Devoluciones
             </Link>
             </div>
           </div>
 
-          <div className="flex flex-col w-4/12 text-center  px-10">
-            <h3 className="text-xl font-medium">Contáctanos</h3>
-          <div className="mx-auto text-md">
+          <div className="flex flex-col container md:p-0 md:w-4/12 mt-8 md:mt-0 text-center  px-10">
+            <h3 className="text-2xl font-medium">Contáctanos</h3>
+          <div className="mx-auto  text-md">
             <div className="flex mt-3">
               <SiInstagram size={iconSize} className="my-auto " />
               <span className="my-auto ml-3 ">@miboutiqueonline.es</span>

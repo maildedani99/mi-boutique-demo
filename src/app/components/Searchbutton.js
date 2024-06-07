@@ -3,13 +3,18 @@ import { useContext } from "react";
 import { FiSearch } from "react-icons/fi";
 import { AppContext } from "../lib/AppContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function SearchButton() {
 
+    const router = useRouter()
     const { searchBarIsOpen, setSearchBarIsOpen } = useContext(AppContext)
 
     const handleClickSearchButton = () => {
+        if (searchBarIsOpen) {
+            router.back()
+        }
         setSearchBarIsOpen(!searchBarIsOpen)
     }
 

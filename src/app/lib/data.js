@@ -94,6 +94,7 @@ export  async function getRedsysData (redsysData) {
     amount: redsysData.total?.toFixed(2),
     order: redsysData.ds_order
   }
+  console.log(body)
   const url = process.env.NEXT_PUBLIC_API_URL +  "redsys/generate-signature";
   return fetchApiData(url, "POST", body);
 }

@@ -1,47 +1,44 @@
-"use client"
-import { FiMinus, FiPlus } from "react-icons/fi";
-import { AppContext } from "../lib/AppContext";
+"use client";
 import { useContext, useState } from "react";
+import { AppContext } from "../lib/AppContext";
 
 export default function QuantitySelector({ item }) {
+  const { addQuantity, removeQuantity } = useContext(AppContext);
 
-  const { addQuantity, removeQuantity } = useContext(AppContext)
+  const [quantity, setQuantity] = useState(item.quantity ? item.quantity : 1);
 
-  const [quantity, setQuantity] = useState(item.quantity ? item.quantity : 1)
+  const handleChange = (e) => {
+    let value = parseInt(e.target.value, 10);
 
-  const handlePlus = (item) => {
-    setQuantity(quantity + 1);
-    addQuantity(item)
-  };
+    // Ensure value is within bounds
+    if (isNaN(value)) {
+      value = 1;
+    } else if (value < 1) {
+      value = 1;
+    } else if (value > 99) {
+      value = 99;
+    }
 
-  const handleMinus = (item) => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-      removeQuantity(item)
+    setQuantity(value);
+
+    // Update the context based on the new value
+    if (value > item.quantity) {
+      addQuantity(item, value - item.quantity);
+    } else if (value < item.quantity) {
+      removeQuantity(item, item.quantity - value);
     }
   };
 
-
   return (
-    <div className="mx-auto text-slate-500">
-      <div className="flex flex-col-reverse	 sm:flex-row sm:border p-2  sm:px-3 sm:py-2 my-auto">
-        <FiMinus
-          size={15}
-          color="#636364"
-          className="mt-1.5 cursor-pointer"
-          onClick={() => handleMinus(item)}
-        />
-        <span className="sm:mx-6 select-none text-base mx-auto">{quantity}</span>
-        <FiPlus
-          size={15}
-          color="#636364"
-          className="mt-1.5 cursor-pointer"
-          onClick={() => handlePlus(item)}
-        />
-      </div>
-      <div></div>
+    <div className="flex w-auto mx-auto text-slate-500">
+      <input
+        type="number"
+        className="border p-2 text-center w-full"
+        value={quantity}
+        min="1"
+        max="99"
+        onChange={handleChange}
+      />
     </div>
   );
-};
-
-
+}

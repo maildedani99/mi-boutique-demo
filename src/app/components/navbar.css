@@ -17,7 +17,7 @@
     min-width: 220px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
-    z-index: 100000;
+    z-index: 10;
     line-height: 2;
     /* color: #1A171B; */
     
@@ -26,5 +26,5 @@
   .dropdown:hover .dropdown-content {
     display: block;
     /* color: #1A171B; */
-    z-index: 1000;
+    z-index: 9;
   }
