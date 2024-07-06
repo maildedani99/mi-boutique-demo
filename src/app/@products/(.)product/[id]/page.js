@@ -11,7 +11,7 @@ export default async function Product({ params }) {
 
     return (
         <Modal>
-                <ProductViewCard product={product[0]} />
+                <ProductViewCard product={product} />
         </Modal>
     )
 

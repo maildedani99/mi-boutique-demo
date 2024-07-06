@@ -28,15 +28,13 @@ export default function PaySummary() {
     useEffect(() => {
         if (!cartItems || cartItems.length === 0) {
             router.push('/');
-        } else {
-            itemsOrderCreate(cartItems);
-        }
+        } 
          // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [cartItems, router, setOrderItems]);
+    }, [cartItems, router]);
 
     return (
         formData && (
-            <div className="flex flex-col text-text container mx-auto mt-32 py-10 px-4 lg:px-0 w-full tracking-wider font-light">
+            <div className="flex flex-col container mx-auto mt-32 py-10 px-4 lg:px-0 w-full tracking-wider font-light">
                 <h2 className="text-2xl font-bold mb-4">Resumen de la Compra</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full">
                     <div className="lg:col-span-1 mb-6">

@@ -38,7 +38,7 @@ export default function ShoppingList() {
   return (
     <div className="flex flex-col flex-1 mx-10 h-auto">
       {cartItems && cartItems.length !== 0 && cartItems.map((item, index) => (
-        <div key={index} className="flex w-full border-t border-primary h-auto">
+        <div key={index} className="flex w-full border-t border-[#DAC895] h-auto">
           <div className="hidden sm:flex w-2/12 my-auto">
             <ClientImage
               src={item.images[0].url}

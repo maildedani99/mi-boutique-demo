@@ -37,19 +37,19 @@ export default function Footer() {
           <div className="mx-auto  text-md">
             <div className="flex mt-3">
               <SiInstagram size={iconSize} className="my-auto " />
-              <span className="my-auto ml-3 ">@miboutiqueonline.es</span>
+              <span className="my-auto ml-3 ">@usuriagacollection</span>
             </div>
             <div className="flex mt-2">
               <BsTelephone size={iconSize} className="my-auto " />
-              <span className="my-auto ml-3 ">602 41 90 86</span>
+              <span className="my-auto ml-3 ">613 488 326</span>
             </div>
             <div className="flex mt-2">
               <FiMail size={iconSize} className="my-auto " />
-              <span className="my-auto ml-3 ">info@miboutiqueonline.es</span>
+              <span className="my-auto ml-3 ">info@usuriaga.com</span>
             </div>{" "}
             <div className="flex mt-2 ">
               <BsWhatsapp size={iconSize} className="my-auto " />
-              <span className="my-auto ml-3 ">602 41 90 86</span>
+              <span className="my-auto ml-3 ">613 488 326</span>
             </div>
           </div>
 
@@ -58,7 +58,7 @@ export default function Footer() {
       </div>
       <div className=" hidden lg:flex flex-col w-full mx-auto py-10 my-auto">
             
-            <p className="mx-auto text-base">© 2024 MI BOUTIQUE ONLINE. Todos los derechos reservados.
+            <p className="mx-auto text-base">© 2024 USURIAGA COLLECTION. Todos los derechos reservados.
 
 </p>
           </div>

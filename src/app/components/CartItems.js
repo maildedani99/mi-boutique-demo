@@ -20,8 +20,8 @@ export default function CartItems() {
           const price = calculatePrice(item);
           const totalPrice = price * item.quantity;
           return (
-            <div key={index} className="flex flex-col sm:flex-row border-t border-primary py-4 text-text">
-              <div className="flex w-full sm:w-1/12 lg:w-2/12 my-auto justify-center sm:justify-start mb-4 sm:mb-0">
+            <div key={index} className="flex flex-col sm:flex-row border-t border-[#DAC895] py-4">
+              <Link href={`/product/${item.id}`} className="flex w-full sm:w-1/12 lg:w-2/12 my-auto justify-center sm:justify-start mb-4 sm:mb-0">
                 <ClientImage
                   src={item.images[0].url}
                   alt="imagen"
@@ -29,7 +29,7 @@ export default function CartItems() {
                   height={100}
                   className="py-2"
                 />
-              </div>
+              </Link>
               <div className="flex flex-col sm:flex-row flex-1 justify-evenly">
                 <div className="flex flex-col text-center sm:text-left ml-4 text-base lg:text-lg w-full sm:w-2/6 font-medium my-auto">
                   <span>{item.name}</span>

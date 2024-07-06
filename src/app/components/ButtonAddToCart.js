@@ -5,7 +5,6 @@ import { AppContext } from "../lib/AppContext";
 import { HiLockClosed } from "react-icons/hi2";
 import useProducts from "../lib/utils";
 import { useRouter } from "next/navigation";
-import classNames from "classnames";
 
 export default function ButtonAddToCart({ item }) {
   const {
@@ -127,7 +126,7 @@ export default function ButtonAddToCart({ item }) {
         <span className="mx-auto">Añadir al carrito</span>
       </button>
       <div className="flex">
-        <HiLockClosed size={20} color="#97B79C" className="my-auto" />{" "}
+        <HiLockClosed size={20} color="#dac895" className="my-auto" />{" "}
         <span className="text-base text-primary my-auto ml-1 mt-1">
           Pago seguro
         </span>

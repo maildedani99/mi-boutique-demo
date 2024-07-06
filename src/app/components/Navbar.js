@@ -23,11 +23,11 @@ export default async function Navbar() {
     <>
       <div className="hidden lg:flex w-full fixed flex-col bg-white top-0 z-10	">
         <div
-          className="flex  flex-1 border-b bg-primary	"
+          className="flex  flex-1 border-b bg-primary 	"
         >
-          <div className="flex flex-1 w-3/5 justify-center  p-1 	 tracking-widest text-white">
-            <span className="">
-              ESTA WEB ES UNA DEMO. LOS PRODUCTOS Y PRECIOS NO SON REALES, Y SU CONTENIDO NO TIENE VALIDEZ COMERCIAL.
+          <div className="flex flex-1 w-3/5 justify-center  p-1 	 tracking-widest ">
+            <span className="text-white">
+              ENVÍOS GRATIS para compras superiores a 60€
             </span>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default async function Navbar() {
             <Image
               className="mx-auto"
               src="/logo_black.svg"
-              alt="Usuriaga"
+              alt="logo"
               width={100}
               height={100}  
             />

@@ -19,13 +19,13 @@ export default function SummaryCart(props) {
   const envio = totalPrice >= 60 ? 0 : 3.90;
 
   return (
-    <div className="flex flex-col flex-1 text-text">
-      <div className="flex flex-1 border-2 border-primary">
+    <div className="flex flex-col flex-1">
+      <div className="flex flex-1 border-2 border-[#DAC895]">
         <div className="flex-col flex-1">
           <div className="mt-8 text-2xl px-6">
             <span>Resumen Cesta</span>
           </div>
-          <div className="flex w-3/3 border-y-2  border-primary py-3 justify-between mx-6 mt-10">
+          <div className="flex w-3/3 border-y-2 border-[#DAC895] py-3 justify-between mx-6 mt-10">
             <div>
               <span className="uppercase text-lg">subtotal</span>
               <span> (impuestos inc.) </span>
@@ -42,7 +42,7 @@ export default function SummaryCart(props) {
               <span>{formatPrice(envio)} €</span>
             </div>
           </div>
-          <div className="flex w-3/3 border-t-2 border-primary py-3 justify-between mx-6 mt-10">
+          <div className="flex w-3/3 border-t-2 border-[#DAC895] py-3 justify-between mx-6 mt-10">
             <div>
               <span className="uppercase text-lg">total</span>
             </div>

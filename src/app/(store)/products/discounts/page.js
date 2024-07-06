@@ -7,9 +7,6 @@ export default async function Discounts () {
     const products = await getDiscounts()
 
     return (
-      <>
-    
       <ProductsView products={products} title="Rebajas" />
-    </>
     )
 }

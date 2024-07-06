@@ -13,13 +13,28 @@ export default function PayForm() {
 
   const router = useRouter()
 
-  const { formData, setFormData, orderItems, order, cartItems, setRedsysData } = useContext(AppContext);
+  const { formData, setFormData, orderItems, order, cartItems, setRedsysData, setOrderItems } = useContext(AppContext);
 
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [requestedInvoice, setRequestedInvoice] = useState(false);
   const [validated, setValidated] = useState(false);
 
   const countries = [{id:1, value:"España"}, {id:2, value:"Portugal"}]
+
+  const itemsOrderCreate = () => {
+    let items = [];
+    cartItems.forEach(item => {
+        let newItem = {
+            "product_id": item.id,
+            "size_id": item.size.id,
+            "color_id": item.color.id,
+            "quantity": item.quantity,
+            "price": item.price
+        };
+        items.push(newItem);
+    });
+    setOrderItems(items);
+}
 
   const handleInputChange = (event) => {
     const { name, value, id, key } = event.target;
@@ -105,12 +120,14 @@ export default function PayForm() {
   useEffect(() => {
     if (!cartItems || cartItems.length === 0) {
       router.push('/')
+    } else {
+      itemsOrderCreate()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <div className="text-text  flex flex-col container mx-auto mt-20 lg:mt-32 py-10 px-4 lg:px-0 justify-center w-full tracking-wider  font-light	 text-center">
+    <div className="  flex flex-col container mx-auto mt-20 lg:mt-32 py-10 px-4 lg:px-0 justify-center w-full tracking-wider  font-light	 text-center">
       <h2 className="mx-auto  text-4xl lg:text-5xl">Formulario de compra</h2>
       <div className="flex flex-col lg:flex-row w-full grid-col-2 mx-auto">
         <div className="flex w-full lg:w-3/6 flex-col flex-1 mt-28 lg:mb-10">

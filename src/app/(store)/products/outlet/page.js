@@ -8,8 +8,6 @@ export default async function Outlet () {
 
 
     return (
-      <>
       <ProductsView products={products} title="Outlet" />
-    </>
     )
 }
